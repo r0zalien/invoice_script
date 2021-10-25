@@ -9,8 +9,12 @@ from time import gmtime, strftime
 from re import sub
 from decimal import Decimal
 
+PROGRAM_CODES = ['CPP01','SSF01']
+CLASS_CODES = ['CU035','COV19']
+
 #/ Configurations
-d_path = '//lib-nas2.ad.calpoly.edu/docker/rek/ubuntu/sftp/finance/acq_export_invoices/'
+#/d_path = '//lib-nas2.ad.calpoly.edu/docker/rek/ubuntu/sftp/finance/acq_export_invoices/'
+d_path = 'C:/Users/hcribbs/erp/input'
 save_path = 'C:/Users/hcribbs/erp/output'
 
 #/Get XML invoice
@@ -102,14 +106,21 @@ for inv in xml:
             rest = 6 - l
             for i in range(rest):
                 ids.append("")
-                
+
+            Program = ''
+            Class = ''
+
+            if ids[3] in PROGRAM_CODES:
+                Program = ids[3]
+            else:
+                Class = ids[3]
+
             #/Grab values
+            #/Program and class codes are at the same index, mutually exclusive
             Account  = ids[0]
             Fund     = ids[1]
             Dept     = ids[2]
-            Program  = ids[3]
-            Class    = ids[4]
-            Project  = ids[5]
+            Project  = ids[4]
     
     ###########################################################################
     
