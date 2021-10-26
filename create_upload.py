@@ -13,9 +13,8 @@ PROGRAM_CODES = ['CPP01','SSF01']
 CLASS_CODES = ['CU035','COV19']
 
 #/ Configurations
-#/d_path = '//lib-nas2.ad.calpoly.edu/docker/rek/ubuntu/sftp/finance/acq_export_invoices/'
-d_path = 'C:/Users/hcribbs/erp/input'
-save_path = 'C:/Users/hcribbs/erp/output'
+d_path = '//lib-nas2.ad.calpoly.edu/docker/rek/ubuntu/sftp/finance/acq_export_invoices/'
+save_path = 'C:/Users/USERNAME/erp/output'
 
 #/Get XML invoice
 invoice_file = easygui.fileopenbox(msg="Select File", title="Select File",default=d_path+"*.xml", multiple=False)
